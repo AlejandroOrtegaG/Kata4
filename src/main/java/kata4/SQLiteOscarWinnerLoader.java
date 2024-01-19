@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SQLiteOscarWinnerLoader  implements OscarWinnerLoader {
 
-    private Connection connection;
+    private final Connection connection;
 
     public SQLiteOscarWinnerLoader(Connection connection) {
         this.connection = connection;
@@ -29,7 +29,7 @@ public class SQLiteOscarWinnerLoader  implements OscarWinnerLoader {
 
     private ResultSet query() throws SQLException {
         return connection.createStatement().executeQuery(
-                "SELECT * from oscar_winner_male"
+                "SELECT * from oscar_age_male"
         );
     }
 
